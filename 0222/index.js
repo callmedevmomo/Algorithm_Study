@@ -59,7 +59,6 @@ function solution2(numbers) {
 
 // 이중 for문 & Set 사용
 function solution3(numbers) {
-    let startTime = new Date().getTime();
     const temp = []
     for (let i = 0; i < numbers.length; i++) {
         for (let j = i + 1; j < numbers.length; j++) {
@@ -68,8 +67,6 @@ function solution3(numbers) {
     }
     const answer = [...new Set(temp)]
     let result = answer.sort((a, b) => a - b);
-    let endTime = new Date().getTime();
-    console.log(endTime - startTime);
     return result;
 }
 
@@ -98,7 +95,6 @@ function solution4(numbers) {
 
 
 function solution5(numbers) {
-    let startTime = new Date().getTime();
     let answer = [];
     for (let i = 0; i < numbers.length; i++) {
         for (let j = 0; j < numbers.length; j++) {
@@ -108,8 +104,6 @@ function solution5(numbers) {
         }
     }
     answer = [...new Set(answer)].sort((a, b) => a - b)
-    let endTime = new Date().getTime();
-    console.log(endTime - startTime);
     return answer;
 }
 
@@ -117,7 +111,6 @@ function solution5(numbers) {
 // Set & Add
 
 function solution6(numbers) {
-    let startTime = new Date().getTime();
     const sorted_numbers = numbers.sort((a, b) => a - b);
     const answer_set = new Set([]);
     for (let i = 0; i < sorted_numbers.length; i += 1) {
@@ -135,8 +128,6 @@ function solution6(numbers) {
     let result = Array
         .from(answer_set)
         .sort((a, b) => a - b);
-    let endTime = new Date().getTime();
-    console.log(endTime - startTime);
     return result;
 }
 

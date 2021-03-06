@@ -1,31 +1,30 @@
 function solution(answers) {
-    let answer=[];
     let groupA = [1,2,3,4,5];
     let groupB = [2,1,2,3,2,4,2,5];
     let groupC = [3,3,1,1,2,2,4,4,5,5];
     let acount=0, bcount =0, ccount=0;
-    for (let i = 0; i<answers.length; i++){
-        if(answers[i]===groupA[i%5]){
-            acount++;
-        }
-        if(answers[i]===groupB[i%8]){
-            bcount++;
-        }
-        if(answers[i]===groupC[i%10]){
-            ccount++;
-        }
+   for (let i = 0; i < answers.length; i++) {
+    if (answers[i] === groupA[i % 5]) {
+        acount++;
     }
-    let c = Math.max(acount,bcount,ccount);
-    let d = [acount,bcount,ccount];
-    for ( let i in d ){
-        if(d[i]===c){
-            answer.push(Number(parseInt(i,10)+1));
-        }
+    if (answers[i] === groupB[i % 8]) {
+        bcount++;
     }
-    answer.sort((a,b)=>a-b);
-    return answer;
+    if (answers[i] === groupC[i % 10]) {
+        ccount++;
+    }
 }
-
+let c = Math.max(acount, bcount, ccount);
+let d = [acount, bcount, ccount];
+let result = d
+    .map((data, i) => {
+        if (data === c) {
+            return i + 1
+        }
+    })
+    .filter((data) => data !== undefined);
+    return result;
+}
 
 
 function solution(answers) {
@@ -46,3 +45,5 @@ function solution(answers) {
 
     return answer;
 }
+
+
